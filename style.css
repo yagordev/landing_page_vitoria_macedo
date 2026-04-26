@@ -1,3 +1,11 @@
+/* Fonts */
+@font-face {
+    font-family: 'Brattons';
+    src: url('fonts/brattons.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Variables */
 :root {
     --bg-color: #F7F4ED;
@@ -102,18 +110,25 @@ header nav {
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 2px;
+    font-family: 'Brattons', serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 1px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    line-height: 1;
+}
+
+.logo-text {
+    padding-top: 6px; /* Ajuste visual para compensar a métrica da fonte */
 }
 
 .logo-img {
     height: 55px;
     width: auto;
     filter: brightness(1.05);
+    display: block;
     transition: var(--transition);
 }
 
@@ -121,7 +136,7 @@ header nav {
     transform: scale(1.05);
 }
 
-.logo span {
+.logo-text span {
     color: var(--logo-color);
 }
 
@@ -293,8 +308,9 @@ footer {
 }
 
 .footer-logo {
-    font-size: 32px;
-    font-weight: 900;
+    font-family: 'Brattons', serif;
+    font-size: 36px;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 

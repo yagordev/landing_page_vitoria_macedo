@@ -1,11 +1,12 @@
 /* Variables */
 :root {
-    --bg-color: #fdfbf7;
-    --accent-color: #f4e1e1;
-    --text-main: #4a4a4a;
-    --text-muted: #7a7a7a;
-    --cta-color: #d4a373;
-    --cta-hover: #b88b5d;
+    --bg-color: #F7F4ED;
+    --accent-color: #f4e1e1; /* Mantido conforme solicitado para a seção serviços */
+    --text-main: #5E3E29;
+    --text-muted: #847261;
+    --cta-color: #847261;
+    --cta-hover: #5E3E29;
+    --logo-color: #d4a373; /* Cor original da logo preservada */
     --white: #ffffff;
     --container-width: 1100px;
     --transition: all 0.3s ease;
@@ -107,7 +108,7 @@ header nav {
 }
 
 .logo span {
-    color: var(--cta-color);
+    color: var(--logo-color);
 }
 
 .nav-links {
@@ -272,7 +273,8 @@ section {
 /* Footer */
 footer {
     padding: 60px 0;
-    background-color: #f3f3f3;
+    background-color: var(--bg-color);
+    border-top: 1px solid rgba(0,0,0,0.05);
     text-align: center;
 }
 
@@ -283,7 +285,7 @@ footer {
 }
 
 .footer-logo span {
-    color: var(--cta-color);
+    color: var(--logo-color);
 }
 
 .social-links {

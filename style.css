@@ -312,10 +312,24 @@ footer {
     font-size: 36px;
     font-weight: 400;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    line-height: 1;
 }
 
-.footer-logo span {
+.footer-logo-text {
+    padding-top: 8px; /* Ajuste visual para compensar a métrica da fonte */
+}
+
+.footer-logo-text span {
     color: var(--logo-color);
+}
+
+.footer-logo-img {
+    height: 60px;
+    width: auto;
 }
 
 .social-links {

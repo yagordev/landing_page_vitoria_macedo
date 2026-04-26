@@ -105,6 +105,20 @@ header nav {
     font-size: 28px;
     font-weight: 900;
     letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    filter: brightness(1.05);
+    transition: var(--transition);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
 }
 
 .logo span {

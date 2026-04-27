@@ -157,32 +157,44 @@ header nav {
 
 /* Hero Section */
 .hero {
-    padding: 80px 0;
-    min-height: 80vh;
+    padding: 0;
+    height: calc(100vh - 80px); /* Ocupa a tela cheia menos a altura do header */
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
     align-items: center;
+    height: 100%;
 }
 
 .hero-text h1 {
-    font-size: 56px;
+    font-size: clamp(40px, 5vw, 56px);
     line-height: 1.1;
     margin-bottom: 20px;
 }
 
 .hero-text p {
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     color: var(--text-muted);
     margin-bottom: 30px;
 }
 
+.hero-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 .hero-image img {
+    max-height: 80vh; /* Garante que a imagem não ultrapasse a altura da tela */
+    width: auto;
+    object-fit: cover;
     border-radius: 20px;
     box-shadow: 20px 20px 0 var(--accent-color);
 }

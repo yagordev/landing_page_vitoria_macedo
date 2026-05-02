@@ -482,6 +482,24 @@ footer {
     font-size: 24px;
 }
 
+.footer-address {
+    margin-bottom: 25px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+.footer-address i {
+    color: var(--cta-color);
+    margin-right: 8px;
+}
+
+.copyright {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 25px;
+}
+
 /* Header & Nav Links Mobile Support */
 .nav-links.active {
     display: flex;

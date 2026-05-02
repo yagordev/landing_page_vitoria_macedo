@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Offset for sticky header
+                        top: targetElement.offsetTop - document.getElementById('header').offsetHeight, // Dynamic offset for sticky header
                         behavior: 'smooth'
                     });
                 }

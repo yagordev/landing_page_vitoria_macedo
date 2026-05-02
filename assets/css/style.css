@@ -1,7 +1,7 @@
 /* Fonts */
 @font-face {
     font-family: 'Brattons';
-    src: url('fonts/brattons.otf') format('opentype');
+    src: url('../fonts/brattons.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -158,7 +158,7 @@ header nav {
 /* Common Section Styles */
 section {
     padding: 60px 0;
-    min-height: calc(100vh - 80px); /* Ajustado para descontar o header */
+    min-height: calc(100vh - 75px); /* Ajustado para descontar o header scrollado */
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -186,7 +186,7 @@ section {
 /* Hero Section */
 .hero {
     padding: 0;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 75px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -474,6 +474,32 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* Hide nav button on mobile to save space */
+    .btn-nav {
+        display: none;
+    }
+
+    /* Adjust logo size to prevent horizontal overflow and center it */
+    .logo {
+        font-size: 22px;
+        margin: 0 auto;
+    }
+    .logo-img {
+        height: 40px;
+    }
+
+    /* Show hamburger menu and position it */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+
+    header nav {
+        justify-content: center;
+        position: relative;
+    }
+
     .nav-links {
         display: none;
         position: fixed;
@@ -484,8 +510,31 @@ footer {
         display: flex;
     }
 
+    /* Adjust Hero Section */
+    .hero-image {
+        margin-bottom: 15px;
+    }
     .hero-text h1 {
         font-size: clamp(32px, 8vw, 48px);
+    }
+    
+    /* Make the CTA button full width and smaller padding to prevent breaking */
+    .btn-cta {
+        padding: 12px 20px;
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Adjust Hero Image to fit screen with shadow and be smaller */
+    .hero-image img {
+        max-width: 85%;
+        max-height: 420px;
+        height: auto;
+        margin: 0 auto;
+        box-shadow: 10px 10px 0 var(--accent-color);
+        object-fit: cover;
     }
     
     .section-grid {

@@ -34,6 +34,10 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -59,7 +63,7 @@
           <li><a href="#portfolio">Portfólio</a></li>
         </ul>
         <a
-          href="https://wa.me/5562985509023?text=Olá Vitória! Gostaria de agendar um horário para o Beauty Experience."
+          href="https://wa.me/5562985509023?text=Olá Vitória! Gostaria de agendar um horário."
           class="btn btn-primary btn-nav"
           target="_blank"
         >
@@ -75,7 +79,7 @@
       <!-- Hero Section -->
       <section id="home" class="hero">
         <div class="container hero-content">
-          <div class="hero-text">
+          <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
             <h1>Sofisticação, sensibilidade e transformação</h1>
             <p>
               Realçando a sua beleza natural através de uma experiência única de
@@ -91,9 +95,9 @@
               </a>
             </div>
           </div>
-          <div class="hero-image">
+          <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
             <img
-              src="assets/images/Vitoria Macedo/Vitoria-3 (1).webp"
+              src="assets/images/Vitoria Macedo/Vitoria_hero.webp"
               alt="Vitória Macedo - Beauty Experience"
               fetchpriority="high"
             />
@@ -104,15 +108,15 @@
       <!-- Sobre Mim Section -->
       <section id="sobre" class="sobre">
         <div class="container section-grid">
-          <div class="sobre-image">
+          <div class="sobre-image" data-aos="fade-right" data-aos-duration="1000">
             <img
-              src="assets/images/Vitoria Macedo/Vitoria-2 (1).webp"
+              src="assets/images/Vitoria Macedo/Vitoria_sobre.webp"
               alt="Maquiadora Vitória Macedo"
               loading="lazy"
               decoding="async"
             />
           </div>
-          <div class="sobre-text">
+          <div class="sobre-text" data-aos="fade-left" data-aos-duration="1000">
             <span class="section-subtitle">Beleza com Propósito</span>
             <h2>Meu nome é Vitória</h2>
             <p>
@@ -149,7 +153,7 @@
             <h2>Serviços e Valores</h2>
           </div>
           <div class="servicos-grid">
-            <div class="servico-card">
+            <div class="servico-card" data-aos="fade-up" data-aos-duration="800">
               <i class="fas fa-bolt"></i>
               <h3>Beauty Express</h3>
               <p>
@@ -158,7 +162,7 @@
               </p>
               <span class="price">R$ 180,00</span>
             </div>
-            <div class="servico-card highlight">
+            <div class="servico-card highlight" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
               <i class="fas fa-magic"></i>
               <h3>Make Beauty</h3>
               <p>
@@ -167,7 +171,7 @@
               </p>
               <span class="price">R$ 280,00</span>
             </div>
-            <div class="servico-card">
+            <div class="servico-card" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
               <i class="fas fa-camera"></i>
               <h3>Fashion Book</h3>
               <p>
@@ -193,7 +197,7 @@
       <!-- Mentoria Section -->
       <section id="mentoria" class="mentoria">
         <div class="container mentoria-grid">
-          <div class="mentoria-text">
+          <div class="mentoria-text" data-aos="fade-right" data-aos-duration="1000">
             <span class="section-subtitle subtitle-light">Próximo Nível</span>
             <h2>Mentoria para Maquiadoras</h2>
             <p>
@@ -215,9 +219,9 @@
               </a>
             </div>
           </div>
-          <div class="mentoria-image">
+          <div class="mentoria-image" data-aos="fade-left" data-aos-duration="1000">
             <img
-              src="assets/images/Vitoria Macedo/IMG_0854.JPG (1).webp"
+              src="assets/images/Vitoria Macedo/Vitoria_mentoria.webp"
               alt="Mentoria para Maquiadoras - Vitória Macedo"
               loading="lazy"
             />
@@ -225,6 +229,33 @@
         </div>
       </section>
 
+      <!-- Depoimentos Section 
+      <section id="depoimentos" class="depoimentos">
+        <div class="container">
+          <div class="section-header" data-aos="fade-up">
+            <span class="section-subtitle">O que dizem</span>
+            <h2>Depoimentos</h2>
+          </div>
+          <div class="depoimentos-grid">
+            <div class="depoimento-card" data-aos="fade-up" data-aos-delay="100">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>"A Vitória simplesmente superou todas as minhas expectativas. Me senti maravilhosa, a maquiagem durou a festa inteira e a pele ficou impecável!"</p>
+              <h4>- Nome da Cliente</h4>
+            </div>
+            <div class="depoimento-card" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>"A mentoria foi um divisor de águas. Aprendi não só técnicas refinadas, mas como me posicionar e atrair clientes que valorizam o meu trabalho."</p>
+              <h4>- Nome da Aluna</h4>
+            </div>
+            <div class="depoimento-card" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>"Atendimento impecável! Ela entendeu exatamente o que eu queria: uma beleza sofisticada sem exageros. Recomendo de olhos fechados."</p>
+              <h4>- Nome da Cliente</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+-->
       <!-- Portfólio Section -->
       <section id="portfolio" class="portfolio">
         <div class="container">
@@ -234,40 +265,64 @@
           </div>
           <div class="portfolio-grid">
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0705.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make1.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make1.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0839 (1).webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make2.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make2.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0840.JPG.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make3.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make3.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0841.JPG.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make4.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make4.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0842.JPG.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make5.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make5.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0843.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make6.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make6.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0844 (1).webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make7.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make7.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0845.JPG.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make8.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make8.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0846.JPG.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make9.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make9.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0847.JPG.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make10.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make10.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/IMG_0848.JPG.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make11.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make11.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
             <div class="portfolio-item skeleton">
-              <img src="assets/images/Maquiagens/LUM49716 (1).webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              <a href="assets/images/Maquiagens/make12.webp" class="glightbox" data-gallery="portfolio">
+                <img src="assets/images/Maquiagens/make12.webp" alt="Trabalho de Maquiagem - Vitória Macedo" loading="lazy" decoding="async" />
+              </a>
             </div>
           </div>
         </div>
@@ -298,6 +353,10 @@
       </div>
     </footer>
 
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script src="assets/js/script.js"></script>
     <!-- Floating WhatsApp Button -->
     <a

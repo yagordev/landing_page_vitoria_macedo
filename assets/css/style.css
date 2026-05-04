@@ -29,6 +29,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -36,6 +37,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, .logo {
@@ -72,11 +74,21 @@ img {
     text-transform: uppercase;
     font-size: 14px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
     background-color: var(--text-main);
     color: var(--white);
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    background-color: var(--white);
+    color: var(--text-main);
+    border-color: var(--text-main);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(94, 62, 41, 0.3);
 }
 
 .btn-cta {
@@ -101,12 +113,19 @@ img {
 /* Header */
 header {
     background-color: rgba(253, 251, 247, 0.95);
-    padding: 20px 0;
-    position: sticky;
+    padding: 10px 0;
+    position: fixed; /* Alterado de sticky para fixed */
     top: 0;
+    left: 0; /* Garantir que comece da esquerda */
+    width: 100%; /* Garantir largura total */
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: padding 0.4s ease, background-color 0.4s ease; /* Explicit and smooth transitions */
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Compensar o espaço do header fixo no início da página */
+body {
+    padding-top: 75px; /* Altura aproximada do header inicial */
 }
 
 header nav {
@@ -149,6 +168,7 @@ header nav {
 .nav-links {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .nav-links a:hover {
@@ -159,15 +179,19 @@ header nav {
     display: none;
     font-size: 24px;
     cursor: pointer;
+    position: relative;
+    z-index: 1002;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Common Section Styles */
 section {
     padding: 60px 0;
-    min-height: calc(100vh - 75px); /* Ajustado para descontar o header scrollado */
+    min-height: calc(100vh - 75px);
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    scroll-margin-top: 80px; /* Alinhamento automático perfeito ao clicar nos links */
 }
 
 .section-header {
@@ -202,7 +226,7 @@ section {
 .hero-content {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
+    gap: 10px;
     align-items: center;
     width: 100%;
 }
@@ -413,6 +437,54 @@ section {
     box-shadow: 0 15px 35px rgba(0,0,0,0.05);
 }
 
+/* Depoimentos */
+.depoimentos {
+    background-color: var(--bg-color);
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.depoimento-card {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-5px);
+}
+
+.quote-icon {
+    font-size: 30px;
+    color: var(--cta-color);
+    opacity: 0.3;
+    margin-bottom: 20px;
+}
+
+.depoimento-card p {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.depoimento-card h4 {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* Portfólio */
 .portfolio {
     background-color: var(--bg-color);
@@ -430,6 +502,27 @@ section {
     aspect-ratio: 3/4; /* Mantém as proporções das fotos de maquiagem */
     position: relative;
     background-color: #e5e5e5;
+}
+
+.skeleton {
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.4) 20%,
+        rgba(255, 255, 255, 0.4) 40%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
 }
 
 .portfolio-item img {
@@ -529,6 +622,8 @@ footer {
     z-index: 1001;
     transform: translateX(0);
     transition: var(--transition);
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .nav-links {
@@ -551,7 +646,14 @@ footer {
     font-size: 30px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
     z-index: 999;
-    transition: var(--transition);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform var(--transition);
+}
+
+.whatsapp-float.hidden-mobile {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    pointer-events: none;
 }
 
 .whatsapp-float:hover {
@@ -570,7 +672,7 @@ footer {
 
     .hero-image, .sobre-image, .mentoria-image {
         order: -1; /* Imagem primeiro no mobile */
-        margin-bottom: 30px;
+        margin-bottom: 0px;
         width: 100%;
     }
 
@@ -632,8 +734,8 @@ footer {
     
     /* Make the CTA button full width and smaller padding to prevent breaking */
     .btn-cta {
-        padding: 12px 20px;
-        font-size: 14px;
+        padding: 20px 20px;
+        font-size: 18px;
         display: block;
         width: 100%;
         box-sizing: border-box;
@@ -672,15 +774,21 @@ footer {
         padding: 40px 0;
     }
 
-    .servicos-grid, .portfolio-grid {
+    .servicos-grid, .depoimentos-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Foco total na imagem no portfólio mobile */
-    .portfolio-item {
-        margin-bottom: 20px;
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* Reduzido para caber melhor no mobile */
     }
-    
+
+    /* Ajuste do alinhamento de rolagem para mobile */
+    section {
+        scroll-margin-top: 30px;
+    }
+
+    /* Foco total na imagem no portfólio mobile */
     .portfolio-item img {
         width: 100%;
         height: auto;

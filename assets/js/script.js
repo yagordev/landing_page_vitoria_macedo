@@ -54,27 +54,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Simple Animation for Portfolio Items
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    
-    const observerOptions = {
-        threshold: 0.1
-    };
+    // Animação de rolagem removida dos itens do portfólio para evitar travamentos.
+    // Deixamos apenas o navegador cuidar do lazy-loading nativo.
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    // Image Load Effect for Portfolio
+    const portfolioImages = document.querySelectorAll('.portfolio-item img');
+    portfolioImages.forEach(img => {
+        const handleLoad = () => {
+            img.classList.add('loaded');
+            // Remove skeleton class from parent after image fades in
+            setTimeout(() => {
+                if (img.parentElement) {
+                    img.parentElement.classList.remove('skeleton');
+                }
+            }, 500);
+        };
 
-    portfolioItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'all 0.6s ease-out';
-        observer.observe(item);
+        if (img.complete) {
+            handleLoad();
+        } else {
+            img.addEventListener('load', handleLoad);
+        }
     });
 });

@@ -215,12 +215,12 @@ section {
 
 /* Hero Section */
 .hero {
-    padding: 0;
-    height: calc(100vh - 75px);
+    padding: 20px 0;
+    min-height: calc(100vh - 75px);
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* overflow removido para evitar corte do botão no mobile */
 }
 
 .hero-content {
